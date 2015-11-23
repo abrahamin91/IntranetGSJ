@@ -1,0 +1,245 @@
+/*@charset "utf-8";*/
+/* CSS Document */
+
+body{
+	margin:0;
+	border:0;
+	font-family:Calibri, Arial, verdana;
+	background-color:#F9F9F9;
+	background-image:url(images/fondo_degradado.jpg);
+	background-repeat:repeat-x;
+	background-attachment:fixed;
+}
+
+a{
+	color:#B40404;
+}
+
+.container{
+   	/*background-color: #ebebeb;
+   	border: thick solid #808080;
+   	padding: 20px;
+   	margin: 20px;*/
+}
+
+.cuadroRegistro
+{
+	background-color:Silver;
+	background-image:url(images/fondo_cuadro_registro.png);
+	background-repeat:repeat-x;
+	/*width:665px;*/
+	width:100%;
+	height:150px;
+	color:#0066CC;
+	padding:8px;
+	margin-left:-30px;
+	margin-right:9px;
+	margin-top:-18px;
+	padding-right:-25px;
+    border-color:#000000;
+    border-width:medium;
+    
+    border-style:solid;
+	/*
+	border-color:#CEDCEF;
+	border-bottom-style:solid;
+	border-bottom-width:medium;*/
+	}
+	
+li
+{
+	list-style:none;
+	}
+
+.cuadroSemaforizado
+{
+	width:120px;
+	height:60px;
+	background-color:transparent;
+	color:White;
+	font-size:12px;
+	font-weight:bold;
+	margin:4px;
+	float:left;
+	padding-top:11px;
+	}
+	
+.semaforoImagen
+{
+	width:18px;
+	height:18px;
+	background-color:transparent;
+	float:left;
+    margin-top:7px;
+	margin-left:4px;
+	margin-right:4px;
+	}
+	
+.semaforoLetras
+{
+	height:18px;
+    font-size:22px;
+	background-color:transparent;
+    color:#000000;
+	float:left;
+	margin-left:4px;
+	margin-right:4px;
+	padding-top:2px;	
+	}
+	
+.letraNombrePaciente
+{
+	font-weight:bold;
+	font-size:19px;
+    
+	}
+
+.letraGrupoSanguineo
+{
+	color:#000000;
+	font-size:15px;
+	font-weight:bold;
+	}
+
+.letraDetalleMonitor
+{
+	color:#000000;
+	font-size:22px;
+	font-weight:bold;
+	}
+.tamano17
+{
+	width:17%
+	}
+.tamano20
+{
+	width:20%
+	}
+.tamano25
+{
+	width:25%
+	}
+.tamano30
+{
+	width:30%
+	}
+.tamano35
+{
+	width:35%
+	}
+
+.letraNombreDoctor
+{
+	color:#000000;
+	font-size:17px;
+	}
+
+.letraTituloDatosContacto
+{
+	color:#000000;
+	font-size:14px;
+	font-weight:bold;
+	}
+	
+.letraDatosContacto
+{
+	color:#000000;
+	font-size:12px;
+	font-style:italic;
+	}
+	
+.letraFechaCaptura
+{
+	color:#B40404;
+	font-size:16px;
+	font-weight:bold;
+	}
+	
+.letraTituloCentralMonitoreo
+{
+	font-size:21px;
+	font-weight:bold;
+	font-style:italic;
+	color:#000000;
+	}
+	
+.letraNombreDoctorEnvio
+{
+	color:#000000;
+	font-size:18px;
+	font-weight:bold;
+	font-style:italic;
+	}
+
+.letraNombreDoctorEnvioLabel
+{
+	color:#000000;
+	font-size:18px;
+	font-weight:bold;
+	font-style:italic;
+	}
+
+.letraTelefonoDoctorEnvio
+{
+	color:#000000;
+	font-size:18px;
+	font-weight:normal;
+	font-style:italic;
+	}
+	
+.cuadroMensajes
+{
+	text-align:center;
+	background-color:Silver;
+	background-image:url('images/fondo_cuadro_registro.png');
+	background-repeat:repeat-x;
+	width:441px;
+	height:302px;
+	color:#0066CC;
+	padding:8px;
+	/*
+	border-color:#CEDCEF;
+	border-bottom-style:solid;
+	border-bottom-width:medium;*/
+	}
+	
+.letraTituloColumnaIzq
+{
+	
+	font-size:17px;
+	font-weight:bold;
+	}
+	
+.letraTituloColumnaDer
+{
+	color:Red;
+	font-size:17px;
+	font-weight:bold;
+	}
+	
+#muestraRegistros
+{
+    /*border-color:#007DAE;
+    border-width:medium;
+    
+    border-style:solid;*/
+    min-width:570px;
+    }
+
+#muestraRegistros1
+{
+    /*border-color:Red;
+    border-width:medium;
+    border-style:solid;*/
+    min-width:570px;
+    }
+
+#info_detalle {
+    border-radius: 25px;
+    border: 4px solid #000000;
+    padding: 20px; 
+    min-width:600px;
+    height: 200px;
+    margin-left: 20px;
+    margin-right: 20px;
+}

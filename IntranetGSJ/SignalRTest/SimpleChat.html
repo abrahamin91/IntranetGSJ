@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Referencias al script -->
+    <!-- Librería de JQuery -->
+    <script src="Scripts/jquery-1.6.4.min.js" type="text/javascript"></script>
+    <!-- Librería de SignalR -->
+    <script src="Scripts/jquery.signalR-1.0.0-rc1.js" type="text/javascript"></script>
+    <!-- Referencia al script de Hubs autogenerado -->
+    <!--<script src="/signalr2/hubs"></script>-->
+    <script type="text/javascript" src='<%= ResolveClientUrl("~/signalr/hubs") %>'></script>
+
+    <!-- Script para actualizar la página con la nueva información -->
+    <script type="text/javascript">
+        $(function () {
+            //Declara un proxy para referenciar el hub.
+            var chat = $.connection.chathub;
+
+            //Crea una función para que el hub pueda llamar a los mensajes en el broadcast
+            chat.client.broadcastMessage = function (name, message) {
+                //Codificar en HTML el mensaje y nombre para mostrar
+                var encodedName = $('<div />').text(name).html();
+                var encodedMsg = $('<div />').text(message).html();
+
+                //Agrega el mensaje a la página
+                $('#discussion').append('<li><strong>' + encodedName
+                    + '</strong>:&nbsp;&nbsp;' + encodedMsg + '</li>');
+            };
+
+            //Obtiene el nombre de usuario y lo guarda para incrustarlo en los mensajes.
+            $('#displayname').val(prompt('Pon tu nombre:', ''));
+
+            //Poner el foco inicial en el área del mensaje
+            $('#message').focus();
+
+            // Inicia la conexión.
+            $.connection.hub.start().done(function () {
+                $('#sendmessage').click(function () {
+                    // Llama al metodo Send en el hub.
+                    chat.server.send($('#displayname').val(), $('#message').val());
+
+                    // Llama la caja de texto y resetea el foco para el siguiente comentario.
+                    $('#message').val('').focus();
+                });
+            });
+        });
+    </script>
+
+    <title>SignalR Chat Simple</title>
+
+    <style type="text/css">
+        .container 
+        {
+        	background-color: #99CCFF;
+        	border: thick solid #808080;
+        	padding: 20px;
+        	margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="message" />
+        <input type="button" id="sendmessage" value="Enviar" />
+        <input type="hidden" id="displayname" />
+        <ul id="discussion">
+        </ul>
+    </div>
+</body>
+</html>

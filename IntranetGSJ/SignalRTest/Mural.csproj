@@ -1,0 +1,687 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FFD85876-416B-4128-8436-43D37A140327}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SignalRTest</RootNamespace>
+    <AssemblyName>SignalRTest</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v8.3, Version=8.3.3.0, Culture=neutral, PublicKeyToken=5377c8e3b72b4073, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.v8.3, Version=8.3.3.0, Culture=neutral, PublicKeyToken=5377c8e3b72b4073, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="MetroFramework">
+      <HintPath>..\packages\MetroModernUI.1.3.5.0\lib\net40\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\packages\MetroModernUI.1.3.5.0\lib\net40\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\packages\MetroModernUI.1.3.5.0\lib\net40\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.1.0.0-rc1\lib\net40\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Owin.1.0.0-rc1\lib\net40\Microsoft.AspNet.SignalR.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.1.0.0-rc1\lib\net40\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.1.0.0-rc1\lib\net40\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\packages\WebActivatorEx.2.0.6\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\dropzone.css" />
+    <Content Include="Imagenes IntranetSJ\Avisos_y_Eventos.jpg" />
+    <Content Include="Imagenes IntranetSJ\Calendario.jpg" />
+    <Content Include="Imagenes IntranetSJ\Capacitaciones.jpg" />
+    <Content Include="Imagenes IntranetSJ\Cursos_para_ti.jpg" />
+    <Content Include="Imagenes IntranetSJ\Formatos.jpg" />
+    <Content Include="Imagenes IntranetSJ\Organigrama.jpg" />
+    <Content Include="Imagenes IntranetSJ\Politicas.jpg" />
+    <Content Include="Imagenes IntranetSJ\Procesos.jpg" />
+    <Content Include="Imagenes IntranetSJ\Quejas_y_sugerencias.jpg" />
+    <Content Include="Imagenes IntranetSJ\Quienes_Somos.jpg" />
+    <Content Include="IntranetSJ\Avisos_y_Eventos.aspx" />
+    <Content Include="IntranetSJ\Calendario.aspx" />
+    <Content Include="IntranetSJ\Capacitaciones.aspx" />
+    <Content Include="IntranetSJ\Cursos_para_ti.aspx" />
+    <Content Include="IntranetSJ\Formatos.aspx" />
+    <Content Include="IntranetSJ\Inicio.aspx" />
+    <Content Include="IntranetSJ\Organigrama.aspx" />
+    <Content Include="IntranetSJ\Políticas.aspx" />
+    <Content Include="IntranetSJ\Procesos.aspx" />
+    <Content Include="IntranetSJ\Quejas_y_sugerencias.aspx" />
+    <Content Include="IntranetSJ\Quienes_somos.aspx" />
+    <Content Include="MuralSJ\Clasificacion.aspx" />
+    <Content Include="MuralSJ\MuralSJ.aspx" />
+    <Content Include="MuralSJ\Preview.aspx" />
+    <Content Include="Scripts\bootstrap-carousel.js" />
+    <Content Include="Content\bootstrap-fileinput\css\fileinput.css" />
+    <Content Include="Content\bootstrap-fileinput\css\fileinput.min.css" />
+    <Content Include="Content\bootstrap-fileinput\img\loading-sm.gif" />
+    <Content Include="Content\bootstrap-fileinput\img\loading.gif" />
+    <Content Include="Content\bootstrap-multiselect.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\metro-icons.css" />
+    <Content Include="Content\metro-icons.min.css" />
+    <Content Include="Content\metro-responsive.css" />
+    <Content Include="Content\metro-responsive.min.css" />
+    <Content Include="Content\metro-rtl.css" />
+    <Content Include="Content\metro-rtl.min.css" />
+    <Content Include="Content\metro-schemes.css" />
+    <Content Include="Content\metro-schemes.min.css" />
+    <Content Include="Content\metro-ui\css\iconFont.min.css" />
+    <Content Include="Content\metro-ui\css\metro-bootstrap-responsive.css" />
+    <Content Include="Content\metro-ui\css\metro-bootstrap-responsive.min.css" />
+    <Content Include="Content\metro-ui\css\metro-bootstrap.css" />
+    <Content Include="Content\metro-ui\css\metro-bootstrap.min.css" />
+    <Content Include="Content\metro-ui\fonts\iconFont.dev.svg" />
+    <Content Include="Content\metro-ui\fonts\iconFont.svg" />
+    <Content Include="Content\metro-ui\fonts\metroSysIcons.svg" />
+    <Content Include="Content\metro.css" />
+    <Content Include="Content\metro.min.css" />
+    <Content Include="Content\singin.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="cuajado\detalle_cuajado.aspx" />
+    <Content Include="cuajado\monitor_cuajado.aspx" />
+    <Content Include="empaque\descarga_info\Calendar.aspx" />
+    <Content Include="empaque\descarga_info\descarga.aspx" />
+    <Content Include="empaque\detalle_empaque.aspx" />
+    <Content Include="empaque\monitor_empaque.aspx" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\metro.svg" />
+    <Content Include="fundido\detalle_fundido.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="images\btn_expediente.png" />
+    <Content Include="images\btn_sms.png" />
+    <Content Include="images\calendar.png" />
+    <Content Include="images\Copia de margen_der.png" />
+    <Content Include="images\Copia de margen_izq.png" />
+    <Content Include="images\f_margen_der.png" />
+    <Content Include="images\izq_marg.png" />
+    <Content Include="images\logo_cuajado.png" />
+    <Content Include="images\logo_fundido.png" />
+    <Content Include="images\editables\btn_expediente.png" />
+    <Content Include="images\editables\btn_sms.png" />
+    <Content Include="images\editables\diseno_cuadros_monitoreo_1.png" />
+    <Content Include="images\editables\fondo_cuadro_registro.png" />
+    <Content Include="images\editables\fondo_cuadro_semaforo.png" />
+    <Content Include="images\editables\fondo_degradado.png" />
+    <Content Include="images\editables\semaforos.png" />
+    <Content Include="images\editables\semaforo_verde.png" />
+    <Content Include="images\fondo_cuadro_registro.png" />
+    <Content Include="images\fondo_cuadro_semaforo.png" />
+    <Content Include="images\fondo_degradado.jpg" />
+    <Content Include="images\icuajado_on.png" />
+    <Content Include="images\ic_cuaj.png" />
+    <Content Include="images\ic_emp.png" />
+    <Content Include="images\ic_fun.png" />
+    <Content Include="images\ic_pp.png" />
+    <Content Include="images\logo_transparente2.png" />
+    <Content Include="images\ic_empaqueon.png" />
+    <Content Include="images\icfun_on.png" />
+    <Content Include="images\icpp_on.png" />
+    <Content Include="images\margen_der.png" />
+    <Content Include="images\margen_izq.png" />
+    <Content Include="images\margen_izq_200.png" />
+    <Content Include="images\margen_s_der.png" />
+    <Content Include="images\margen_s_izqi.png" />
+    <Content Include="images\plecaleft.png" />
+    <Content Include="images\plecaright.png" />
+    <Content Include="images\rsz_1plecaleft.png" />
+    <Content Include="images\rsz_margen_s_derec.png" />
+    <Content Include="images\rsz_margen_s_izqi.png" />
+    <Content Include="images\rsz_plecaright.png" />
+    <Content Include="images\semaforo_amarillo.png" />
+    <Content Include="images\semaforo_rojo.png" />
+    <Content Include="images\semaforo_verde.png" />
+    <Content Include="images\s_margen_izq.png" />
+    <Content Include="KioscoP.aspx" />
+    <Content Include="MuralSJ\Administrar_plantillas_m.aspx" />
+    <Content Include="MuralSJ\Departamentos_m.aspx" />
+    <Content Include="MuralSJ\inicio_MuralSJ.aspx" />
+    <Content Include="MuralSJ\Plantillas_m.aspx" />
+    <Content Include="MuralSJ\Principal_m.aspx" />
+    <Content Include="MuralSJ\Prueba.aspx" />
+    <Content Include="MuralSJ\Usuarios_m.aspx" />
+    <Content Include="menu_monitor\principal.aspx" />
+    <Content Include="fundido\monitor_fundido.aspx" />
+    <Content Include="pp\detalle_pp.aspx" />
+    <Content Include="pp\monitor_pp.aspx" />
+    <Content Include="Scripts\bootstrap-multiselect.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\calendarDate.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="MuralSJ\ProcesarImage.ashx" />
+    <Content Include="MuralSJ\ProcesaVideo.ashx" />
+    <Content Include="fonts\selection.json" />
+    <Content Include="fonts\metro.woff" />
+    <Content Include="fonts\metro.ttf" />
+    <Content Include="fonts\metro.eot" />
+    <Content Include="Content\metro-ui\fonts\metroSysIcons.woff" />
+    <Content Include="Content\metro-ui\fonts\metroSysIcons.ttf" />
+    <Content Include="Content\metro-ui\fonts\iconFont.woff" />
+    <Content Include="Content\metro-ui\fonts\iconFont.ttf" />
+    <Content Include="Content\metro-ui\fonts\iconFont.json" />
+    <Content Include="Content\metro-ui\fonts\iconFont.eot" />
+    <Content Include="MuralSJ\hn_SimpeFileUploader.ashx" />
+    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\carousel.js" />
+    <Content Include="Scripts\dropzone.js" />
+    <Content Include="Scripts\fileinput.js" />
+    <Content Include="Scripts\fileinput.min.js" />
+    <Content Include="Scripts\fileinput_locale_de.js" />
+    <Content Include="Scripts\fileinput_locale_es.js" />
+    <Content Include="Scripts\fileinput_locale_fr.js" />
+    <Content Include="Scripts\fileinput_locale_hu.js" />
+    <Content Include="Scripts\fileinput_locale_it.js" />
+    <Content Include="Scripts\fileinput_locale_LANG.js" />
+    <Content Include="Scripts\fileinput_locale_ru.js" />
+    <Content Include="Scripts\fileinput_locale_sr.js" />
+    <Content Include="Scripts\fileinput_locale_th.js" />
+    <Content Include="Scripts\fileinput_locale_uk.js" />
+    <Content Include="Scripts\fileinput_locale_zh.js" />
+    <Content Include="Scripts\fullscreen.js" />
+    <Content Include="Scripts\holder.js" />
+    <Content Include="Scripts\holder.min.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
+    <Content Include="Scripts\jquery.signalR-1.0.0-rc1.js" />
+    <Content Include="Scripts\jquery.signalR-1.0.0-rc1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jwplayer.js" />
+    <Content Include="Scripts\metro-ui\jquery.ui.widget.js" />
+    <Content Include="Scripts\metro-ui\metro.min.js" />
+    <Content Include="Scripts\player.swf" />
+    <Content Include="Scripts\metro.js" />
+    <Content Include="Scripts\metro.min.js" />
+    <Content Include="SimpleChat.aspx" />
+    <Content Include="SimpleChat.html" />
+    <Content Include="styles.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="EnvioMensajes.aspx" />
+    <Content Include="DatosPaciente.aspx" />
+    <Content Include="Scripts\jquery-2.1.4.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\MetroUICSSBundleConfig.cs" />
+    <Compile Include="ChatHub.cs" />
+    <Compile Include="cuajado\detalle_cuajado.aspx.cs">
+      <DependentUpon>detalle_cuajado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cuajado\detalle_cuajado.aspx.designer.cs">
+      <DependentUpon>detalle_cuajado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cuajado\monitor_cuajado.aspx.cs">
+      <DependentUpon>monitor_cuajado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cuajado\monitor_cuajado.aspx.designer.cs">
+      <DependentUpon>monitor_cuajado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Database\General\Conexion.cs" />
+    <Compile Include="Database\General\General.cs" />
+    <Compile Include="Database\General\Monitoreo.cs" />
+    <Compile Include="empaque\descarga_info\Calendar.aspx.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="empaque\descarga_info\Calendar.aspx.designer.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="empaque\descarga_info\descarga.aspx.cs">
+      <DependentUpon>descarga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="empaque\descarga_info\descarga.aspx.designer.cs">
+      <DependentUpon>descarga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="empaque\detalle_empaque.aspx.cs">
+      <DependentUpon>detalle_empaque.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="empaque\detalle_empaque.aspx.designer.cs">
+      <DependentUpon>detalle_empaque.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="empaque\monitor_empaque.aspx.cs">
+      <DependentUpon>monitor_empaque.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="empaque\monitor_empaque.aspx.designer.cs">
+      <DependentUpon>monitor_empaque.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EnviarSMS\envio_sms.cs" />
+    <Compile Include="fundido\detalle_fundido.aspx.cs">
+      <DependentUpon>detalle_fundido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fundido\detalle_fundido.aspx.designer.cs">
+      <DependentUpon>detalle_fundido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="IntranetSJ\Avisos_y_Eventos.aspx.cs">
+      <DependentUpon>Avisos_y_Eventos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IntranetSJ\Avisos_y_Eventos.aspx.designer.cs">
+      <DependentUpon>Avisos_y_Eventos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IntranetSJ\Calendario.aspx.cs">
+      <DependentUpon>Calendario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IntranetSJ\Calendario.aspx.designer.cs">
+      <DependentUpon>Calendario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IntranetSJ\Capacitaciones.aspx.cs">
+      <DependentUpon>Capacitaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IntranetSJ\Capacitaciones.aspx.designer.cs">
+      <DependentUpon>Capacitaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IntranetSJ\Cursos_para_ti.aspx.cs">
+      <DependentUpon>Cursos_para_ti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IntranetSJ\Cursos_para_ti.aspx.designer.cs">
+      <DependentUpon>Cursos_para_ti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IntranetSJ\Formatos.aspx.cs">
+      <DependentUpon>Formatos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IntranetSJ\Formatos.aspx.designer.cs">
+      <DependentUpon>Formatos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IntranetSJ\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IntranetSJ\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IntranetSJ\Organigrama.aspx.cs">
+      <DependentUpon>Organigrama.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IntranetSJ\Organigrama.aspx.designer.cs">
+      <DependentUpon>Organigrama.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IntranetSJ\Políticas.aspx.cs">
+      <DependentUpon>Políticas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IntranetSJ\Políticas.aspx.designer.cs">
+      <DependentUpon>Políticas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IntranetSJ\Procesos.aspx.cs">
+      <DependentUpon>Procesos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IntranetSJ\Procesos.aspx.designer.cs">
+      <DependentUpon>Procesos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IntranetSJ\Quejas_y_sugerencias.aspx.cs">
+      <DependentUpon>Quejas_y_sugerencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IntranetSJ\Quejas_y_sugerencias.aspx.designer.cs">
+      <DependentUpon>Quejas_y_sugerencias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IntranetSJ\Quienes_somos.aspx.cs">
+      <DependentUpon>Quienes_somos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IntranetSJ\Quienes_somos.aspx.designer.cs">
+      <DependentUpon>Quienes_somos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KioscoP.aspx.cs">
+      <DependentUpon>KioscoP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KioscoP.aspx.designer.cs">
+      <DependentUpon>KioscoP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MuralSJ\Administrar_plantillas_m.aspx.cs">
+      <DependentUpon>Administrar_plantillas_m.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MuralSJ\Administrar_plantillas_m.aspx.designer.cs">
+      <DependentUpon>Administrar_plantillas_m.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MuralSJ\Clasificacion.aspx.cs">
+      <DependentUpon>Clasificacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MuralSJ\Clasificacion.aspx.designer.cs">
+      <DependentUpon>Clasificacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MuralSJ\Departamentos_m.aspx.cs">
+      <DependentUpon>Departamentos_m.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MuralSJ\Departamentos_m.aspx.designer.cs">
+      <DependentUpon>Departamentos_m.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MuralSJ\hn_SimpeFileUploader.ashx.cs">
+      <DependentUpon>hn_SimpeFileUploader.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="MuralSJ\inicio_MuralSJ.aspx.cs">
+      <DependentUpon>inicio_MuralSJ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MuralSJ\inicio_MuralSJ.aspx.designer.cs">
+      <DependentUpon>inicio_MuralSJ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MuralSJ\MuralSJ.aspx.cs">
+      <DependentUpon>MuralSJ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MuralSJ\MuralSJ.aspx.designer.cs">
+      <DependentUpon>MuralSJ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MuralSJ\Plantillas_m.aspx.cs">
+      <DependentUpon>Plantillas_m.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MuralSJ\Plantillas_m.aspx.designer.cs">
+      <DependentUpon>Plantillas_m.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MuralSJ\Preview.aspx.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MuralSJ\Preview.aspx.designer.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MuralSJ\Principal_m.aspx.cs">
+      <DependentUpon>Principal_m.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MuralSJ\Principal_m.aspx.designer.cs">
+      <DependentUpon>Principal_m.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MuralSJ\ProcesarImage.ashx.cs">
+      <DependentUpon>ProcesarImage.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="MuralSJ\ProcesaVideo.ashx.cs">
+      <DependentUpon>ProcesaVideo.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="MuralSJ\Prueba.aspx.cs">
+      <DependentUpon>Prueba.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MuralSJ\Prueba.aspx.designer.cs">
+      <DependentUpon>Prueba.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MuralSJ\Usuarios.cs" />
+    <Compile Include="MuralSJ\Usuarios_m.aspx.cs">
+      <DependentUpon>Usuarios_m.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MuralSJ\Usuarios_m.aspx.designer.cs">
+      <DependentUpon>Usuarios_m.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logic\General\EnvioCorreos.cs" />
+    <Compile Include="Logic\General\ErrorHandler.cs" />
+    <Compile Include="Logic\General\Monitoreo.cs" />
+    <Compile Include="menu_monitor\principal.aspx.cs">
+      <DependentUpon>principal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="menu_monitor\principal.aspx.designer.cs">
+      <DependentUpon>principal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="fundido\monitor_fundido.aspx.cs">
+      <DependentUpon>monitor_fundido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fundido\monitor_fundido.aspx.designer.cs">
+      <DependentUpon>monitor_fundido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pp\detalle_pp.aspx.cs">
+      <DependentUpon>detalle_pp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pp\detalle_pp.aspx.designer.cs">
+      <DependentUpon>detalle_pp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pp\monitor_pp.aspx.cs">
+      <DependentUpon>monitor_pp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pp\monitor_pp.aspx.designer.cs">
+      <DependentUpon>monitor_pp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleChat.aspx.cs">
+      <DependentUpon>SimpleChat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SimpleChat.aspx.designer.cs">
+      <DependentUpon>SimpleChat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EnvioMensajes.aspx.cs">
+      <DependentUpon>EnvioMensajes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EnvioMensajes.aspx.designer.cs">
+      <DependentUpon>EnvioMensajes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DatosPaciente.aspx.cs">
+      <DependentUpon>DatosPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosPaciente.aspx.designer.cs">
+      <DependentUpon>DatosPaciente.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Fakes Include="Fakes\DevExpress.Data.v8.3.fakes" />
+  </ItemGroup>
+  <ItemGroup>
+    <Fakes Include="Fakes\DevExpress.Web.v8.3.fakes" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\Perfil1.pubxml" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>31217</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
