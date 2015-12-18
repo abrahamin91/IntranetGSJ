@@ -89,6 +89,18 @@
     </script>
     <video id="mediaplayer" autoplay="true">JW Player goes here</video>
 
+    <ul>
+<li>JEFE
+<ul>
+<li>GERENTE
+<ul>
+<li>EMPLEADO</li>
+</ul> <!-- empleado fin -->
+</li>
+</ul> <!-- gerente fin -->
+</li>
+</ul> <!-- jefe fin -->
+
       <script type="text/javascript">
 
           jwplayer("mediaplayer").setup({
@@ -100,6 +112,12 @@
               width: 1000,
               height: 615,
 
+          });
+          jQuery(document).ready(function () {
+              $("#org").jOrgChart({
+                  chartElement: '#chart',
+                  dragAndDrop: true
+              });
           });
 
     </script>

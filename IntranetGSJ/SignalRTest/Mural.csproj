@@ -146,17 +146,22 @@
     <Content Include="Imagenes IntranetSJ\Procesos.jpg" />
     <Content Include="Imagenes IntranetSJ\Quejas_y_sugerencias.jpg" />
     <Content Include="Imagenes IntranetSJ\Quienes_Somos.jpg" />
-    <Content Include="IntranetSJ\Avisos_y_Eventos.aspx" />
-    <Content Include="IntranetSJ\Calendario.aspx" />
-    <Content Include="IntranetSJ\Capacitaciones.aspx" />
-    <Content Include="IntranetSJ\Cursos_para_ti.aspx" />
-    <Content Include="IntranetSJ\Formatos.aspx" />
-    <Content Include="IntranetSJ\Inicio.aspx" />
-    <Content Include="IntranetSJ\Organigrama.aspx" />
-    <Content Include="IntranetSJ\Políticas.aspx" />
-    <Content Include="IntranetSJ\Procesos.aspx" />
-    <Content Include="IntranetSJ\Quejas_y_sugerencias.aspx" />
-    <Content Include="IntranetSJ\Quienes_somos.aspx" />
+    <Content Include="ComunikSJ\Avisos_y_Eventos.aspx" />
+    <Content Include="ComunikSJ\Calendario.aspx" />
+    <Content Include="ComunikSJ\Capacitaciones.aspx" />
+    <Content Include="ComunikSJ\Cursos_para_ti.aspx" />
+    <Content Include="ComunikSJ\areas_finanzas_int.aspx" />
+    <Content Include="ComunikSJ\Formatos.aspx" />
+    <Content Include="ComunikSJ\Formatos_Contabilidad.aspx" />
+    <Content Include="ComunikSJ\Formatos_CXC.aspx" />
+    <Content Include="ComunikSJ\Formatos_CXP.aspx" />
+    <Content Include="ComunikSJ\Formatos_rh.aspx" />
+    <Content Include="ComunikSJ\Inicio.aspx" />
+    <Content Include="ComunikSJ\Organigrama.aspx" />
+    <Content Include="ComunikSJ\Politicas.aspx" />
+    <Content Include="ComunikSJ\Procesos.aspx" />
+    <Content Include="ComunikSJ\Quejas_y_sugerencias.aspx" />
+    <Content Include="ComunikSJ\Quienes_somos.aspx" />
     <Content Include="MuralSJ\Clasificacion.aspx" />
     <Content Include="MuralSJ\MuralSJ.aspx" />
     <Content Include="MuralSJ\Preview.aspx" />
@@ -311,6 +316,7 @@
     <Content Include="Content\metro-ui\fonts\iconFont.json" />
     <Content Include="Content\metro-ui\fonts\iconFont.eot" />
     <Content Include="MuralSJ\hn_SimpeFileUploader.ashx" />
+    <Content Include="ComunikSJ\ProcesarDocumento.ashx" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\carousel.js" />
     <Content Include="Scripts\dropzone.js" />
@@ -345,6 +351,7 @@
     <Content Include="Scripts\player.swf" />
     <Content Include="Scripts\metro.js" />
     <Content Include="Scripts\metro.min.js" />
+    <Content Include="Scripts\wheelzoom.js" />
     <Content Include="SimpleChat.aspx" />
     <Content Include="SimpleChat.html" />
     <Content Include="styles.css" />
@@ -364,6 +371,9 @@
   <ItemGroup>
     <Compile Include="App_Start\MetroUICSSBundleConfig.cs" />
     <Compile Include="ChatHub.cs" />
+    <Compile Include="ComunikSJ\ProcesarDocumento.ashx.cs">
+      <DependentUpon>ProcesarDocumento.ashx</DependentUpon>
+    </Compile>
     <Compile Include="cuajado\detalle_cuajado.aspx.cs">
       <DependentUpon>detalle_cuajado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -420,81 +430,116 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="IntranetSJ\Avisos_y_Eventos.aspx.cs">
+    <Compile Include="ComunikSJ\Avisos_y_Eventos.aspx.cs">
       <DependentUpon>Avisos_y_Eventos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="IntranetSJ\Avisos_y_Eventos.aspx.designer.cs">
+    <Compile Include="ComunikSJ\Avisos_y_Eventos.aspx.designer.cs">
       <DependentUpon>Avisos_y_Eventos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="IntranetSJ\Calendario.aspx.cs">
+    <Compile Include="ComunikSJ\Calendario.aspx.cs">
       <DependentUpon>Calendario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="IntranetSJ\Calendario.aspx.designer.cs">
+    <Compile Include="ComunikSJ\Calendario.aspx.designer.cs">
       <DependentUpon>Calendario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="IntranetSJ\Capacitaciones.aspx.cs">
+    <Compile Include="ComunikSJ\Capacitaciones.aspx.cs">
       <DependentUpon>Capacitaciones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="IntranetSJ\Capacitaciones.aspx.designer.cs">
+    <Compile Include="ComunikSJ\Capacitaciones.aspx.designer.cs">
       <DependentUpon>Capacitaciones.aspx</DependentUpon>
     </Compile>
-    <Compile Include="IntranetSJ\Cursos_para_ti.aspx.cs">
+    <Compile Include="ComunikSJ\Cursos_para_ti.aspx.cs">
       <DependentUpon>Cursos_para_ti.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="IntranetSJ\Cursos_para_ti.aspx.designer.cs">
+    <Compile Include="ComunikSJ\Cursos_para_ti.aspx.designer.cs">
       <DependentUpon>Cursos_para_ti.aspx</DependentUpon>
     </Compile>
-    <Compile Include="IntranetSJ\Formatos.aspx.cs">
+    <Compile Include="ComunikSJ\areas_finanzas_int.aspx.cs">
+      <DependentUpon>areas_finanzas_int.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ComunikSJ\areas_finanzas_int.aspx.designer.cs">
+      <DependentUpon>areas_finanzas_int.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ComunikSJ\Formatos.aspx.cs">
       <DependentUpon>Formatos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="IntranetSJ\Formatos.aspx.designer.cs">
+    <Compile Include="ComunikSJ\Formatos.aspx.designer.cs">
       <DependentUpon>Formatos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="IntranetSJ\Inicio.aspx.cs">
+    <Compile Include="ComunikSJ\Formatos_Contabilidad.aspx.cs">
+      <DependentUpon>Formatos_Contabilidad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ComunikSJ\Formatos_Contabilidad.aspx.designer.cs">
+      <DependentUpon>Formatos_Contabilidad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ComunikSJ\Formatos_CXC.aspx.cs">
+      <DependentUpon>Formatos_CXC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ComunikSJ\Formatos_CXC.aspx.designer.cs">
+      <DependentUpon>Formatos_CXC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ComunikSJ\Formatos_CXP.aspx.cs">
+      <DependentUpon>Formatos_CXP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ComunikSJ\Formatos_CXP.aspx.designer.cs">
+      <DependentUpon>Formatos_CXP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ComunikSJ\Formatos_rh.aspx.cs">
+      <DependentUpon>Formatos_rh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ComunikSJ\Formatos_rh.aspx.designer.cs">
+      <DependentUpon>Formatos_rh.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ComunikSJ\Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="IntranetSJ\Inicio.aspx.designer.cs">
+    <Compile Include="ComunikSJ\Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
-    <Compile Include="IntranetSJ\Organigrama.aspx.cs">
+    <Compile Include="ComunikSJ\Organigrama.aspx.cs">
       <DependentUpon>Organigrama.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="IntranetSJ\Organigrama.aspx.designer.cs">
+    <Compile Include="ComunikSJ\Organigrama.aspx.designer.cs">
       <DependentUpon>Organigrama.aspx</DependentUpon>
     </Compile>
-    <Compile Include="IntranetSJ\Políticas.aspx.cs">
-      <DependentUpon>Políticas.aspx</DependentUpon>
+    <Compile Include="ComunikSJ\Politicas.aspx.cs">
+      <DependentUpon>Politicas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="IntranetSJ\Políticas.aspx.designer.cs">
-      <DependentUpon>Políticas.aspx</DependentUpon>
+    <Compile Include="ComunikSJ\Politicas.aspx.designer.cs">
+      <DependentUpon>Politicas.aspx</DependentUpon>
     </Compile>
-    <Compile Include="IntranetSJ\Procesos.aspx.cs">
+    <Compile Include="ComunikSJ\Procesos.aspx.cs">
       <DependentUpon>Procesos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="IntranetSJ\Procesos.aspx.designer.cs">
+    <Compile Include="ComunikSJ\Procesos.aspx.designer.cs">
       <DependentUpon>Procesos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="IntranetSJ\Quejas_y_sugerencias.aspx.cs">
+    <Compile Include="ComunikSJ\Quejas_y_sugerencias.aspx.cs">
       <DependentUpon>Quejas_y_sugerencias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="IntranetSJ\Quejas_y_sugerencias.aspx.designer.cs">
+    <Compile Include="ComunikSJ\Quejas_y_sugerencias.aspx.designer.cs">
       <DependentUpon>Quejas_y_sugerencias.aspx</DependentUpon>
     </Compile>
-    <Compile Include="IntranetSJ\Quienes_somos.aspx.cs">
+    <Compile Include="ComunikSJ\Quienes_somos.aspx.cs">
       <DependentUpon>Quienes_somos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="IntranetSJ\Quienes_somos.aspx.designer.cs">
+    <Compile Include="ComunikSJ\Quienes_somos.aspx.designer.cs">
       <DependentUpon>Quienes_somos.aspx</DependentUpon>
     </Compile>
     <Compile Include="KioscoP.aspx.cs">

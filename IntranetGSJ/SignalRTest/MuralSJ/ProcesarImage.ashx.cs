@@ -13,13 +13,13 @@ namespace SignalRTest.MuralSJ
 
         public void ProcessRequest(HttpContext context)
         {
+           
             int idimg = Convert.ToInt32(context.Request.QueryString[0]);
             byte[] Img = SignalRTest.Database.General.Monitoreo.obtieneImagen_m("obtener_imagen", idimg);
             context.Response.ContentType = "image/jpg";
             context.Response.BinaryWrite(Img);
 
         }
-
         public bool IsReusable
         {
             get

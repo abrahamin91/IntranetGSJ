@@ -99,7 +99,7 @@
                         <asp:Repeater ID="Repeater2" runat="server">
                             <ItemTemplate >
                                 <div class='<%# Activador_Item(Eval("num_plant")) %>'>
-                                <img alt="" style='height: 500px; width: 100%' src='<%# "../MuralSJ/ProcesarImage.ashx?id=" + DataBinder.Eval(Container.DataItem,"idimagen") %>' />
+                                <img  alt="" style='height: 500px; width: 100%' src='<%# "../MuralSJ/ProcesarImage.ashx?id=" + DataBinder.Eval(Container.DataItem,"idimagen") %>' />
                                 </div>
                             </ItemTemplate>
                         </asp:Repeater>
