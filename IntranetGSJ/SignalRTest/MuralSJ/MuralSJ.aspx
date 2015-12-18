@@ -86,7 +86,7 @@ z-index:102;
         $('#myCarousel_todo').on('slid.bs.carousel', function (e) {
             $('.item').find('video').play();
         }
-        });
+        );
 
 </script>
             <script>

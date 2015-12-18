@@ -30,6 +30,25 @@ namespace SignalRTest.Database.General
             }
             return conlSqlConn;
         }
+        public static string cadenaDeConexion2()
+        {
+            return ConfigurationManager.ConnectionStrings["virtumedikConnectionString2"].ToString();
+        }
+        public static SqlConnection creaConexion2()
+        {
+            SqlConnection conlSqlConn = new SqlConnection(cadenaDeConexion2());
+
+            try
+            {
+                conlSqlConn.Open();
+            }
+            catch (Exception ex)
+            {
+                HttpContext.Current.Session["Error"] = ex.Message.ToString();
+                return null;
+            }
+            return conlSqlConn;
+        }
         public static DataTable EjecutaconsultaTable(string query)
         {
             SqlConnection conexion = creaConexion();
@@ -212,6 +231,50 @@ namespace SignalRTest.Database.General
                 sqlConn.Close();
             }
             return inicio;
+        }
+        //*********************Intranet*************************************
+        public static byte[] ejecutaQueryDoc_intranet(string query)
+        {
+            byte[] doc = null;
+            //SqlConnection sqlConn = new SqlConnection();
+            //sqlConn = creaConexion();
+            SqlConnection sqlConn = creaConexion2();
+            try
+            {
+                SqlCommand comSqlCommand = new SqlCommand();
+                comSqlCommand.Connection = sqlConn;
+                comSqlCommand.CommandText = query;
+                doc = (byte[])comSqlCommand.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                HttpContext.Current.Session["Error"] = ex.Message.ToString();
+            }
+            finally
+            {
+                sqlConn.Close();
+            }
+            return doc;
+        }
+        public static DataSet creaDataSet_doc(string query)
+        {
+            SqlConnection Con = creaConexion2();
+            SqlDataAdapter dalSqlDataAdapter = new SqlDataAdapter(query, Con);
+            DataSet dslDataSet = new DataSet();
+            try
+            {
+                dalSqlDataAdapter.Fill(dslDataSet);
+            }
+            catch (Exception ex)
+            {
+                HttpContext.Current.Session["Error"] = ex.Message.ToString();
+                return null;
+            }
+            finally
+            {
+                Con.Close();
+            }
+            return dslDataSet;
         }
        
     }

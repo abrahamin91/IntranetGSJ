@@ -130,5 +130,27 @@ namespace SignalRTest.Database.General
             string Querystring = "SELECT * FROM pacientes WHERE id_paciente='" + idPaciente + "'";
             return Database.General.Conexion.creaDataSet(Querystring);
         }
+
+        //*********************Intranet***************************
+        //Regresa documento tipo byte
+        public static byte[] obtienedoc_intranet(string store, int id_doc)
+        {
+            string Querystring = "EXEC " + store + " " + id_doc;
+            return Database.General.Conexion.ejecutaQueryDoc_intranet(Querystring);
+        }
+
+        //Regresa documento y nombre 
+        public static DataSet obtiene_doc_nom_intranet(string store, int id_doc)
+        {
+
+            string Querystring = "EXEC " + store + " " + id_doc;
+            return Database.General.Conexion.creaDataSet_doc(Querystring);
+        }
+        public static DataSet Cargar_Formatos(string store)
+        {
+            string Querystring = " EXEC " + store;
+            return Database.General.Conexion.creaDataSet_doc(Querystring);
+
+        }
     }
 }
